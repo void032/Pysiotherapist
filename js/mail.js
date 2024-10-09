@@ -39,34 +39,37 @@ document.addEventListener("DOMContentLoaded", () => {
         to: "vk73511390@gmail.com",
         subject: document.getElementById("subject").value,
         text: `<h4>New Contact Request</h4>
-                    <p><strong>Name:</strong> ${
-                      document.getElementById("name").value
-                    }</p>
-                    <p><strong>Email:</strong> ${
-                      document.getElementById("email").value
-                    }</p>
-                    <p><strong>Phone:</strong> ${
-                      document.getElementById("phone").value
-                    }</p>
-                    <p><strong>Address:</strong> ${
-                      document.getElementById("project").value
-                    }</p>
-                    <p><strong>Subject:</strong> ${
-                      document.getElementById("subject").value
-                    }</p>
-                    <p><strong>Message:</strong> ${
-                      document.getElementById("messages").value
-                    }</p>`,
+                <p><strong>Name:</strong> ${
+                  document.getElementById("name").value
+                }</p>
+                <p><strong>Email:</strong> ${
+                  document.getElementById("email").value
+                }</p>
+                <p><strong>Phone:</strong> ${
+                  document.getElementById("phone").value
+                }</p>
+                <p><strong>Address:</strong> ${
+                  document.getElementById("project").value
+                }</p>
+                <p><strong>Subject:</strong> ${
+                  document.getElementById("subject").value
+                }</p>
+                <p><strong>Message:</strong> ${
+                  document.getElementById("messages").value
+                }</p>`,
       };
 
       try {
-        const response = await fetch("http://localhost:3000/send-email", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(emailData),
-        });
+        const response = await fetch(
+          "https://pysiotherapist.onrender.com/send-email",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(emailData),
+          }
+        );
 
         if (response.ok) {
           showAlert("Your email has been sent successfully!");
@@ -98,37 +101,40 @@ document.addEventListener("DOMContentLoaded", () => {
         subject:
           document.getElementById("Apname").value + " Requested an Appointment",
         text: `<h4>New Appointment Request</h4>
-                    <p><strong>Name:</strong> ${
-                      document.getElementById("Apname").value
-                    }</p>
-                    <p><strong>Email:</strong> ${
-                      document.getElementById("Apemail").value
-                    }</p>
-                    <p><strong>Phone:</strong> ${
-                      document.getElementById("Apphone").value
-                    }</p>
-                    <p><strong>Gender:</strong> ${
-                      document.getElementById("Apgender").value
-                    }</p>
-                    <p><strong>Date:</strong> ${
-                      document.getElementById("Apdate").value
-                    }</p>
-                    <p><strong>Department:</strong> ${
-                      document.getElementById("Apdepartment").value
-                    }</p>
-                    <p><strong>Comment:</strong> ${
-                      document.getElementById("Apcomment").value
-                    }</p>`,
+                <p><strong>Name:</strong> ${
+                  document.getElementById("Apname").value
+                }</p>
+                <p><strong>Email:</strong> ${
+                  document.getElementById("Apemail").value
+                }</p>
+                <p><strong>Phone:</strong> ${
+                  document.getElementById("Apphone").value
+                }</p>
+                <p><strong>Gender:</strong> ${
+                  document.getElementById("Apgender").value
+                }</p>
+                <p><strong>Date:</strong> ${
+                  document.getElementById("Apdate").value
+                }</p>
+                <p><strong>Department:</strong> ${
+                  document.getElementById("Apdepartment").value
+                }</p>
+                <p><strong>Comment:</strong> ${
+                  document.getElementById("Apcomment").value
+                }</p>`,
       };
 
       try {
-        const response = await fetch("http://localhost:3000/send-email", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(ApData),
-        });
+        const response = await fetch(
+          "https://pysiotherapist.onrender.com/send-email",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(ApData),
+          }
+        );
 
         if (response.ok) {
           showAlert("Your appointment email has been sent successfully!");

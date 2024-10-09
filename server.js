@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use Render's port
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,7 +16,7 @@ app.post("/send-email", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL, 
+      user: process.env.EMAIL,
       pass: process.env.PASSWORD,
     },
   });
@@ -37,5 +37,5 @@ app.post("/send-email", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
